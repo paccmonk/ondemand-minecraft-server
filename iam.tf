@@ -11,6 +11,6 @@ resource "aws_key_pair" "minecraft_server_keypair" {
 
 resource "local_file" "minecraft_server_keypair" {
   content = tls_private_key.pem_key.private_key_pem
-  filename = "/home/ac156-gopinath/Downloads/minecraft_server_keypair.pem"
+  filename = "${path.module}/minecraft_server_keypair.pem"
   file_permission = 0400
 }
